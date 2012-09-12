@@ -1,0 +1,12 @@
+aspect test17 {
+	advice around(): bob {% 
+		if(){ } asdsl lslfj lsjdf lks lajs lskdj slskd 
+	%}
+
+	advice before($x): set(file.foo) {% sdfsdfsdfsdf %}
+
+	advice after($x,$y,$z): execfiles {%%}
+
+}
+
+aspect test21 { pointcut bob = set(file.x) | get(file.y)&&arg5(98); }

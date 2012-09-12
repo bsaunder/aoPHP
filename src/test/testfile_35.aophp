@@ -1,0 +1,47 @@
+<?
+
+function add($x,$y){
+	return $x+$y;
+}
+
+function sub($x,$y){
+	return $x-$y;
+}
+
+function say($s){ 
+	echo $s;
+}
+$asd = 4;
+
+$q = 507; $b = "bob";
+
+//add(6,7); 
+
+$monkey = $x;
+
+aophp_init("testcase_35.aophp");
+
+say("Poof!");
+
+$x = "Hello World";
+subway(4);
+add(4,5);
+say($z);
+sub(5,6);
+addone(8);
+
+if(true){
+addone(6);
+}
+
+extra(2);
+addone($a1);
+$y = $z;
+$g = $h;
+$c = 'a';
+
+echo "Cheese!!!";
+
+$x = $z;
+
+?>

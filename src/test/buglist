@@ -1,0 +1,15 @@
+Know Bug List
+Format:
+Status	Test	Bug
+
+Status Codes:
+F - Fixed
+K - Know
+I - Work in Progress
+P - Planned
+
+F	T-11	Grammar Error. Paramlist does not allow empty parameters, ie: ()
+F	T-14-16	Grammar Error. set and get JP should not be allowed to have Paramlist, exec & execr should have Paramlist
+F	T-20	Arguments blow up on String values. Check regex
+F	T-27	Update nextToken and lookToken functions to account for ALL whitespace, not just spaces
+F	T-35	Spaces Immediatley before a JP Type caused Parsers to Parse ID not Joinpoint

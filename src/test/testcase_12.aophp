@@ -1,0 +1,1 @@
+aspect test12 { pointcut pc12 = execr(file.add($x,$y)); }

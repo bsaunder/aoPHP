@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<title>INSTALL AOPHP To Install aophp Follow the Steps Below</title>
+</head>
+
+<body>
+
+<p><font face="Arial"><b>INSTALL AOPHP</b></font><font face="Arial" size="2"><br>
+To Install aophp Follow the Steps Below</font></p>
+<ol style="font-size: 10pt; font-family: Arial">
+  <li>Download aophp</li>
+  <li><code><font face="Arial" size="2">Extract Archive<br>
+  <i>tar -xf aophp_v3_1.tar</i></font></code></li>
+  <li><code><font face="Arial" size="2">cd into the created directory<br>
+  <i>cd </i></font><i><font face="Arial" size="2">vx_x_x/</font></i></code></li>
+  <li><code><font face="Arial" size="2">cd into the upload directory<br>
+  <i>cd upload/</i></font></code></li>
+  <li><font face="Arial" size="2">Modify the <i>aophpFilePath</i> and <i>
+  outputFileDir</i> variables in the <i>aophpexec.aophp</i> file</font><ol>
+    <li><font face="Arial" size="2">The <i>aophpFilePath</i> variable should be 
+    the full path to the <i>aophp</i> binary</font></li>
+    <li><font face="Arial" size="2">The <i>outputFileDir</i> variable should be 
+    the full path to the directory where the weaved files will be written. This 
+    directory should be writable by the <i>aophp</i> binary and access able by 
+    the aophpexec script. You may need to chmod this directory using the chmod 
+    command.</font></li>
+  </ol>
+  </li>
+  <li><font face="Arial" size="2">Upload the <i>aophpexec.aophp</i> and <i>
+  .htaccess</i> files to every directory where you want to use aoPHP. For 
+  instance if your application is in the WEBROOT/myapp directory, upload them 
+  there.</font></li>
+  <li><font face="Arial" size="2">Upload the <i>aophp</i> binary file to the 
+  directory that you set in <i>aophpFilePath</i> variable</font><ol>
+    <li><font face="Arial" size="2">If you need to compile the binary, follow 
+    the instructions for compiling a binary below</font></li>
+  </ol>
+  </li>
+</ol>
+<p><font face="Arial"><b>COMPILE AOPHP</b></font><font face="Arial" size="2"><br>
+Follow the steps below to compile aoPHP from the source code.</font></p>
+<ol style="font-family: Arial; font-size: 10pt">
+  <li><font face="Arial" size="2">Download the
+  <a href="http://aophp.coastal.edu/repos/boost_1_33_1.tar.gz">Boost Libraries</a>,
+  <a href="http://aophp.coastal.edu/repos/boost-jam-3.1.12.tgz">Boost Jam</a>, 
+  and <a href="http://aophp.coastal.edu/repos/xpressive.zip">Xpressive</a> from 
+  the aophp website or get the latest version from
+  <a href="http://www.boost.org">www.boost.org</a></font></li>
+  <li><font face="Arial" size="2">Install Boost Jam</font><ol>
+    <li><font face="Arial" size="2">Decompress and Extract the archive<br>
+    <i>gunzip</i> <i>boost-jam-3.1.12.tgz<br>
+    tar -xf boost-jam-3.1.12.tar</i></font></li>
+    <li><font face="Arial" size="2"><i>cd</i> into the created directory</font></li>
+    <li><font face="Arial" size="2">run the build script<br>
+    <i>sh ./build.sh</i></font></li>
+    <li><font size="2" face="Arial">Go into the newly created directory 
+    containing the <i>bjam</i> executable (</font><tt><font size="2" face="Arial">bin.linuxx86 
+    on my system) and copy the <i>bjam</i> executable to /bin<br>
+    </font><i><font size="2" face="Arial">cd bin.linuxx86<br>
+    cp bjam /bin</font></i></tt></li>
+  </ol>
+  </li>
+  <li><font size="2" face="Arial">Install Boost Libraries</font><ol>
+    <li><font face="Arial"><font size="2">Decompress and Extract the archive<br>
+    </font><i><font size="2">gunzip boost_1_33_1.tar.gz<br>
+    tar -xf boost_1_33_1.tar</font></i></font></li>
+    <li><font face="Arial"><font size="2">cd into the created directory<br>
+    </font><i><font size="2">cd boost_1_33_1</font></i></font></li>
+    <li><font face="Arial"><font size="2">Configure the Libraries<br>
+    </font><i><font size="2">./configure</font></i></font></li>
+    <li><font size="2" face="Arial">Run the installation script<br>
+    </font><i><code><font face="Arial" size="2">bjam&nbsp;&quot;-sTOOLS=gcc&quot; install</font></code></i></li>
+    <li><code><font face="Arial" size="2">Go get some coffee, its going to take 
+    a minute</font></code></li>
+  </ol>
+  </li>
+  <li><code><font face="Arial" size="2">Install Xpressive</font></code><ol>
+    <li><code><font face="Arial" size="2">Extract the archive to your include 
+    directory<br>
+    <i>unzip xpressive.zip -d /usr/include</i></font></code></li>
+  </ol>
+  </li>
+  <li><code><font face="Arial" size="2">Download aophp Source Code</font></code></li>
+  <li><code><font face="Arial" size="2">Extract Archive<br>
+  <i>tar -xf aophp_v3_1.tar</i></font></code></li>
+  <li><code><font face="Arial" size="2">cd into the created directory<br>
+  <i>cd </i></font><i><font face="Arial" size="2">vx_x_x/</font></i></code></li>
+  <li><code><font face="Arial" size="2">cd into the src directory<br>
+  <i>cd src/</i></font></code></li>
+  <li><code><font face="Arial" size="2">Compile aophp<br>
+  <i>make install</i></font></code></li>
+</ol>
+<p><font face="Arial"><b><font size="2">Note:</font></b><font size="2"> You can 
+follow the official instructions for compiling and installing Boost/Boost Jam by 
+going to this link: <a href="http://www.boost.org/more/getting_started.html">
+http://www.boost.org/more/getting_started.html</a> </font></font></p>
+
+</body>
+
+</html>

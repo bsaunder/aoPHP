@@ -1,0 +1,4 @@
+aspect test17 {
+pointcut doublepc = execr(file.add($x,$y))&&arg3("joe") | execr(file.sub($z,$q))&&arg1(5)&&arg2("bob");
+pointcut simple = doublepc;
+}

@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>LL</title>
+</head>
+
+<body>
+
+<p><b><font face="Arial">Syntax and Valid Types</font></b></p>
+<p><font face="Arial"><b>Pointcut Types:</b></font></p>
+<ul>
+	<li><font face="Arial">exec</font></li>
+	<li><font face="Arial">execr</font></li>
+	<li><font face="Arial">set</font></li>
+	<li><font face="Arial">get</font></li>
+</ul>
+<p><font face="Arial"><b>Advice Types:</b></font></p>
+<ul>
+	<li><font face="Arial">before</font></li>
+	<li><font face="Arial">around</font></li>
+	<li><font face="Arial">after</font></li>
+</ul>
+
+	<p><b><font face="Arial">Sample Syntax</font></b></p>
+
+	aspect NAME {<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;
+	pointcut PCNAME = execr(file.func($p1,$p2));<br>
+	&nbsp;&nbsp;&nbsp;
+	pointcut PCNAME2 = set(file.x);<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;
+	advice before($ip1,$ip2): PCNAME {%<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	... CODE ...<br>
+	&nbsp;&nbsp;&nbsp;
+	%}<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;
+	advice around(): PCNAME2 | set(file.y) {%<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	... CODE ...<br>
+	&nbsp;&nbsp;&nbsp;
+	%}<br>
+	<br>
+	&nbsp;&nbsp;&nbsp;
+	adivce after(): exec(file.func2())&amp;&amp;arg1(5)&amp;&amp;arg2(&quot;Word&quot;) {%<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	... CODE ...<br>
+	&nbsp;&nbsp;&nbsp;
+	%}<br>
+	}
+
+
+</body>
+
+</html>

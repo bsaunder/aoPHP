@@ -1,0 +1,39 @@
+aspect aspect1 {
+
+    pointcut addsub = execr(after.add($x,$y)) | execr(after.sub($x,$y));
+    pointcut talk = exec(after.say($text));
+    pointcut div = execr(after.div($a,$b));
+
+    advice before($p1,$p2): addsub {%
+        echo "<font color=red>Im About To Add/Sub $p1 & $p2</font><br>";
+    %}
+
+    advice around($p1,$p2): execr(after.add($x,$y)) {%
+        echo "<font color=red>Im Going to Increment $p1 by 1, then Add it</font></br>";
+        $p1++;
+        proceed($p1,$p2);
+    %}
+
+    advice around($p1,$p2): div {%
+        if($p2 == 0){
+            echo "<font color=red>Cant Divide by 0, Returning -1</font><br>";
+            return -1;
+        } else {
+            echo "<font color=red>Division Allowed, Proceeding</font><br>";
+            proceed($p1,$p2);
+        }
+    %}
+
+    advice before($t): exec(after.say($text)){%
+        echo "<font color=red>Before Talking</font></br>";
+    %}
+
+    advice after($t): talk {%
+        echo "<font color=red>After Talking</font></br>";
+    %}
+
+    advice around($txt): talk {%
+        echo "<font color=red>AOPHP Says: PHP Tried To Say '$txt', But I Said No.</font></br>";
+    %}
+
+}

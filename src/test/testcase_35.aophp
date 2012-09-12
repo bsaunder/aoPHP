@@ -1,0 +1,41 @@
+aspect aspect1 {
+
+    pointcut talk =exec (after.say($text));
+    pointcut div = execr(after.div($a,$b));
+    pointcut multi = execr(after.sub($a,$b)) | execr(after.addone($y)) | execr(after.addtwo($y));
+    pointcut var = get(after.z)|get(after.x);
+    advice around($p1,$p2): execr(after.add($x,$y)) {%
+        echo "<font color=red>Im Going to Increment $p1 by 1, then Add it</font></br>";
+        $p1++;
+        proceed($p1,$p2);
+    %}
+
+    advice around($p1,$p2): div {%
+        if($p2 == 0){
+            echo "<font color=red>Cant Divide by 0, Returning -1</font><br>";
+            return -1;
+        } else {
+            echo "<font color=red>Division Allowed, Proceeding</font><br>";
+            proceed($p1,$p2);
+        }
+    %}
+
+    advice before($t): exec(after.say($text)){%
+        echo "<font color=red>Before Talking</font></br>";
+    %}
+    advice after($a1,$a2): multi {% echo "after multi<br>"; %}
+    advice after($t): talk {%
+        echo "<font color=red>After Talking</font></br>";
+    %}
+
+    advice around($txt): talk {%
+        echo "<font color=red>AOPHP Says: PHP Tried To Say '$txt', But I Said No.</font></br>";
+    %}
+
+    advice before($v): var {% echo "Accessing X"; %}
+
+    advice around($v): set(after.x) {% if(3==2){ proceed_orig; }else{ $y=7; proceed $y; }%}
+}
+
+aspect aspect2 { pointcut var2 = set(after.x) | get(after.x);
+}

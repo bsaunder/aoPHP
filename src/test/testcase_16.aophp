@@ -1,0 +1,3 @@
+aspect test14 {
+pointcut pc14 = set(file.foo($x));
+}

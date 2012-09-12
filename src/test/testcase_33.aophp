@@ -1,0 +1,11 @@
+aspect test17 {
+
+	advice before($x): set(file.foo)&&arg(5) | bob {% sdfsdfsdfsdf %}
+
+	advice after($x,$y,$z): execfiles {%%%%%%%}
+
+
+
+}
+
+aspect test21 { advice around() set(file.foo) {%%} }

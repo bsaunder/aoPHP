@@ -1,0 +1,11 @@
+aspect test17 {
+pointcut doublepc = execr(file.add($x,$y)) | execr(file.sub($z,$q))&&arg1(5);
+pointcut simple = doublepc;
+
+advice around(): bob {% if(){ } asdsl lslfj lsjdf lks lajs lskdj slskd %}
+
+advice before($x): set(file.foo) {% sdfsdfsdfsdf %}
+
+}
+
+aspect test21 { pointcut bob = set(file.x) | get(file.y)&&arg5(98); }

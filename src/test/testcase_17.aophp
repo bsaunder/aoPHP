@@ -1,0 +1,3 @@
+aspect test17 {
+pointcut doublepc = execr(file.add($x,$y)) | execr(file.sub($z,$q));
+}

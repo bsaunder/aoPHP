@@ -1,0 +1,5 @@
+aspect test8 {
+
+pointcut pc = get(file.foo);
+
+}

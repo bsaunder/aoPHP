@@ -1,0 +1,8 @@
+aspect test17 {
+pointcut doublepc = execr(file.add($x,$y)) | execr(file.sub($z,$q))&&arg1(5);
+pointcut simple = doublepc;
+
+advice after(): blah | bah {% %}
+}
+
+aspect test21 { pointcut bob = set(file.x) | get(file.y)&&arg5(98); }

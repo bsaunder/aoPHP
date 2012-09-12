@@ -1,0 +1,7 @@
+aspect test8 {
+
+pointcut pc = exec(file.foo ));
+
+}
+
+aspect test85 { }

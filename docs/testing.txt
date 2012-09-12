@@ -1,0 +1,19 @@
+Below are instructions for testing aophp.
+
+Testing Only the Scanner & Parser
+1) Goto the src/test directory and create a new test case. The general format for test case files is testcase_XX.aophp where XX is the next number in the succession of tests. There are 35 default tests, so you should start with 36.
+2) Edit the faillist - If your test is supposed to fail, then open the file faillist in src/test and add the number for your test case to the end of the comma delimited list
+3) Test - Run the RDP tester from the src directory using the following command
+   ./testrdp XX PATH_TO_FAILLIST
+   testrdp takes 2 parameters. XX is the number of testcases, PATH_TO_FAILLIST is your faillist, you should use test/faillist for this one.
+4) Check Tests - After running the tester, you will get lots of data back about what was parsed/scanned. Aslong as all the tests passed(green text) everything was ok. If you see any RED error messages of the form Test XX Failed, then something is wrong with that test case.
+
+
+Testing the Entire Process / Running aophp
+1) Make sure aophp is compiled, see install.html for instructions for this
+2) run aophp using the syntax below
+   ./aophp INFILE OUTFILE [-x]
+   INFILE is your source file
+   OUTFILE is your output file
+   -x is an optional flag to enable debug mode. This will dump lots of data to your screen.
+

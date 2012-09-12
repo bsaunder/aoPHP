@@ -1,0 +1,43 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>LL</title>
+</head>
+
+<body>
+
+<p><b><font face="Arial">LL(1) Language Grammar</font></b></p>
+<p><font face="Courier New">START -&gt; <i>&lt;ASPECT&gt;</i>+<br>
+ASPECT -&gt; &quot;aspect&quot; <i>&lt;ID&gt;</i> '{' <i>&lt;POINTCUT&gt;</i>* <i>&lt;ADVICE&gt;</i>* '}'<br>
+POINTCUT -&gt; &quot;pointcut&quot; <i>&lt;ID&gt;</i> '=' <i>&lt;JOINPOINT&gt; &lt;JOINPOINTLIST&gt;</i>* ';'<br>
+ADVICE -&gt; &quot;advice&quot; <i>&lt;ADVICETYPE&gt; &lt;PARAMLIST&gt;</i> ':' <i>&lt;JOINPOINT&gt; &lt;JOINPOINTLIST&gt;</i>*
+<i>&lt;CODEBLOCK&gt;</i><br>
+PARAMLIST -&gt; '('[&lt;VARS&gt;]')'<br>
+JOINPOINT -&gt; <i>&lt;FJOINPOINT&gt;</i> | <i>&lt;VJOINPOINT&gt;</i> | <i>&lt;ID&gt;</i><br>
+FJOINPOINT -&gt; <i>&lt;FJPTYPE&gt;</i>'('<i>&lt;SIGNATURE&gt;&lt;PARAMLIST&gt;</i>')'<i>&lt;ARGS&gt;</i>*<br>
+VJOINPOINT -&gt; <i>&lt;VJPTYPE&gt;</i>'('<i>&lt;SIGNATURE&gt;</i>')'<i>&lt;ARGS&gt;</i>*<br>
+JOINPOINTLIST -&gt; '|' <i>&lt;JOINPOINT&gt;</i><br>
+SIGNATURE -&gt; <i>&lt;ID&gt;</i>'.'<i>&lt;ID&gt;</i><br>
+ARGS -&gt; &quot;&amp;&amp;&quot; <i>&lt;ID&gt;</i> '('<i>&lt;ARGVAL&gt;</i>')'<br>
+CODEBLOCK -&gt; <i>&lt;DELIM&gt; &lt;NONDELIM&gt;</i>* <i>&lt;ENDDELIM&gt;</i><br>
+VARS -&gt; '$'<i>&lt;ID&gt;&lt;VARLIST&gt;</i>*<br>
+VAR_LIST -&gt; ','<i>&lt;VAR&gt;</i><br>
+VAR -&gt; '$'<i>&lt;ID&gt;</i><br>
+ID -&gt; <i>&lt;LETTER&gt;&lt;ALPHA&gt;</i>*<br>
+ARGVAL -&gt; '&quot;'<i>&lt;CHAR&gt;</i>'&quot;' | <i>&lt;DIGIT&gt;</i>* <br>
+ADVICETYPE -&gt; &quot;before&quot; | &quot;after&quot; | &quot;around&quot;<br>
+FJPTYPE -&gt; &quot;exec&quot; | &quot;execr&quot;<br>
+VJPTYPE -&gt; &quot;set&quot; | &quot;get&quot;<br>
+LETTER -&gt; [A-Za-z]<br>
+DIGIT -&gt; [0-9]<br>
+ALPHA -&gt; <i>&lt;LETTER&gt;</i>|<i>&lt;DIGIT&gt;</i><br>
+DELIM -&gt; &quot;{%&quot;<br>
+ENDDELIM -&gt; &quot;%}&quot;<br>
+NONDELIM -&gt; ([^%]|[%][^}])*<br>
+CHAR -&gt; .*</font></p>
+
+</body>
+
+</html>

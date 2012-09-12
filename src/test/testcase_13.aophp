@@ -1,0 +1,2 @@
+aspect test13 { 
+pointcut pc13 = execr(file.divby2($x)); }

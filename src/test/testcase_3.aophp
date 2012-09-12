@@ -1,0 +1,5 @@
+aspect joe{  }
+
+  aspect bob {
+
+}
